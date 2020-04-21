@@ -1,0 +1,78 @@
+<div id="myHelp" class="overlay" onmouseleave="closeHelp()">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeHelp()">&times;</a>
+
+  <div
+    style="padding: 10px; font-size: 30px; font-family: Bahnschrift SemiBold; font-variant: petite-caps; border-bottom: 1px solid #006487; text-align: center;">
+    Gesture Help
+  </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openGestureHelp(event, 'solution')" id="defaultOpen">How to obtain
+      Solution?</button>
+    <button class="tablinks" onclick="openGestureHelp(event, 'latex')">How to obtain Latex Format? </button>
+    <button class="tablinks" onclick="openGestureHelp(event, 'erase')">How to erase?</button>
+    <button class="tablinks" onclick="openGestureHelp(event, 'reset')">How to reset?</button>
+    <button class="tablinks" onclick="openGestureHelp(event, 'undo_redo')">How to undo and redo?</button>
+  </div>
+
+  <div id="solution" class="tabcontent">
+    <ul style="list-style-type:disc; margin: 10px; margin-bottom: 20px;">
+      <li>First, Write mathematical equation in Math Recognizer</li>
+      <li>Then, Write <b style="font-weight: 800;">=</b> <b>symbol</b> in Gesture Pad</li>
+      <li>On recognition, Solution is displayed in Result Window</li>
+    </ul>
+    <img src="images/MathWise_solution.gif" alt="How to obtain Latex Format? " width="600px" height="300px" />
+  </div>
+
+  <div id="latex" class="tabcontent">
+    <ul style="list-style-type:disc; margin: 10px; margin-bottom: 20px;">
+      <li>Write mathematical equation in Math Recognizer</li>
+      <li>Write <b style="font-weight: 800;">L</b> <b>symbol</b> in Gesture Pad</li>
+      <li>On recognition, latex format is displayed in Result Window</li>
+    </ul>
+    <img src="images/MathWise_latex.gif" alt="How to Obtain Solution ? " width="600px" height="300px" />
+  </div>
+
+  <div id="erase" class="tabcontent">
+    <ul style="list-style-type:disc; margin: 10px; margin-bottom: 20px;">
+      <li><b style="font-weight: 800;">Strikethrough</b> part/whole equation in math recognizer to erase</li>
+    </ul>
+    <img src="images/MathWise_erase.gif" alt="How to erase ? " width="600px" height="300px" />
+  </div>
+
+  <div id="reset" class="tabcontent">
+    <ul style="list-style-type:disc; margin: 10px; margin-bottom: 20px;">
+      <li>Write <b style="font-weight: 800;">R</b> <b>symbol</b> in the Gesture Pad to clear all sections on MathWise
+      </li>
+    </ul>
+    <img src="images/MathWise_reset.gif" alt="How to reset ? " width="600px" height="300px" />
+  </div>
+
+  <div id="undo_redo" class="tabcontent">
+    <ul style="list-style-type:disc; margin: 10px; margin-bottom: 20px;">
+      <li>Write <b style="font-weight: 800;">
+          << /b> <b>symbol</b> to undo and <b style="font-weight: 800;">></b> <b>symbol</b> to redo</li>
+    </ul>
+    <img src="images/MathWise_undo_redo.gif" alt="How to undo and redo ? " width="600px" height="300px" />
+  </div>
+
+</div>
+
+<script>
+
+  function openGestureHelp(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpen").click();
+
+</script>

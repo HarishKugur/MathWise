@@ -6,7 +6,8 @@ body {
 }
 
 myscript-math-web {
-    height: calc(100% - 64px);
+    height: calc(100% - 380px);
+    /*64px*/
 }
 
 /* myscript-math-web > myscript-math-exports {

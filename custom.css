@@ -1,0 +1,420 @@
+nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+myscript-math-web {
+  height: calc(100% - 59px);
+}
+
+.question {
+  font: 20px "Source Sans Pro", sans-serif;
+  color: #1A9FFF;
+  padding-left: 10px;
+  margin: 2px;
+}
+
+.check {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white !important;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 430px;
+  margin-left: 12%;
+  -webkit-animation: spinLoader 2s linear infinite;
+  /* Safari */
+  animation: spinLoader 0.5s linear infinite;
+}
+
+/* Safari */
+
+@-webkit-keyframes spinLoader {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinLoader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.write-here {
+  position: absolute;
+  width: 100vw;
+  text-align: initial;
+  padding: 0;
+  margin: 25vh auto 0;
+  margin-left: 20%;
+  transform: translateY(-80%);
+  color: #c8cbd0;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 25px;
+  min-width: 315px;
+  z-index: 21;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                   not supported by any browser */
+  pointer-events: none;
+}
+
+.gesture-here {
+  position: absolute;
+  width: 100vw;
+  text-align: initial;
+  padding: 0;
+  margin: 6vh auto 0;
+  margin-left: 80%;
+  transform: translateY(-80%);
+  color: #c8cbd0;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 20px;
+  min-width: 315px;
+  z-index: 21;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                   not supported by any browser */
+  pointer-events: none;
+}
+
+.recognition-here {
+  position: absolute;
+  width: 100vw;
+  text-align: initial;
+  padding: 0;
+  margin: 6vh auto 0;
+  margin-left: 26%;
+  transform: translateY(-80%);
+  color: #c8cbd0;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 15px;
+  min-width: 315px;
+  z-index: 21;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                   not supported by any browser */
+  pointer-events: none;
+}
+
+/**Overlay custom classes*/
+
+.overlay {
+  height: 0%;
+  width: 70%;
+  position: absolute;
+  top: 52px;
+  /* left: 30px; */
+  right: 5px;
+  z-index: 99;
+  /* background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9); */
+  /* background-color: rgb(216, 205, 205); */
+  background-color: rgba(246, 241, 241, 1);
+  overflow-y: hidden;
+  transition: 0.5s;
+  /* border: 1px solid #006487; */
+}
+
+.overlay-content {
+  position: relative;
+  /* top: 25%; */
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  /* color: #818181; */
+  /* color:#fff; */
+  color: #4a4747;
+  display: block;
+  transition: 0.3s;
+  font-family: Rockwell;
+}
+
+.overlay a:hover, .overlay a:focus {
+  /* color: #f1f1f1; */
+  color: #006487;
+  text-decoration: none;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  /* top: 20px;
+  right: 45px; */
+  top: -10px;
+  right: 20px;
+  font-size: 45px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {
+    overflow-y: auto;
+  }
+  .overlay a {
+    font-size: 20px
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/**about page classes*/
+
+.aboutOverlay {
+  height: 0%;
+  width: 99.7%;
+  position: absolute;
+  top: -2px;
+  z-index: 99;
+  background-color: rgba(246, 241, 241, 1);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+/* .aboutOverlay-content {
+  position: relative;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+} */
+
+/* .aboutOverlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  /* color: #818181; */
+
+/* color:#fff; *
+  color: #4a4747;
+  display: block;
+  transition: 0.3s;
+  font-family: Rockwell;
+} */
+
+.aboutOverlay a:hover, .aboutOverlay a:focus {
+  color: #000000;
+  text-decoration: none;
+}
+
+.aboutOverlay .closebtn {
+  position: absolute;
+  color: white;
+  top: -25px;
+  right: 30px;
+  font-size: 60px;
+}
+
+i.fa.fa-clone {
+  font-size: 22px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 8px;
+  background: #006487;
+}
+
+i.fa.fa-info-circle {
+  /* float: right;
+      position: absolute;
+      top: 8px;
+      right: 30px; */
+  color: #006487;
+  border: 2px solid white !important;
+  background-color: white !important;
+  border-radius: 25px;
+  cursor: pointer;
+  /* animation: jump 1s 2s forwards cubic-bezier(.84,-0.54,.31,1.19); */
+}
+
+i.fas.fa-question-circle {
+  /* float: right;
+  position: absolute;
+  top: 8px;
+  right: 30px; */
+  color: #006487;
+  border: 2px solid white !important;
+  background-color: white !important;
+  border-radius: 25px;
+  cursor: pointer;
+  /* animation: jump 1s 2s forwards cubic-bezier(.84,-0.54,.31,1.19); */
+}
+
+.hide {
+  display: none;
+}
+
+/* i.fa.fa-clone:hover {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Garamond;
+    outline: -webkit-focus-ring-color auto 1px;
+} */
+
+/* Style the tab */
+
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 100%;
+}
+
+/* Style the buttons inside the tab */
+
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 100%;
+}
+
+.toast1 {
+  margin: 25px;
+  font-size: 22px;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  text-align: center;
+  padding: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.jump {
+  animation: jump 3s 1s forwards cubic-bezier(.84, -0.54, .31, 1.19);
+}
+
+@keyframes jump {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-1em);
+  }
+}
+
+.spin {
+  animation: spin 3s 1s forwards cubic-bezier(.56, -0.35, .22, 1.5);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(-20deg);
+    animation-timing-function: ease;
+  }
+  25% {
+    transform: rotateZ(90deg);
+    animation-timing-function: ease;
+    background-color: #90c071;
+  }
+  50% {
+    transform: rotateZ(180deg);
+    animation-timing-function: ease;
+    background-color: #90c071;
+  }
+  75% {
+    transform: rotateZ(180deg);
+    animation-timing-function: ease;
+    background-color: #90c071;
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.start-now, .start-now:after {
+  animation-delay: 0;
+}

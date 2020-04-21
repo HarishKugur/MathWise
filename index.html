@@ -1,148 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Interactive Application -->
+
 <head>
     <!-- Those meta make the capture of handwriting inputs easier on mobile devices -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="HandheldFriendly" content="true"/>
+    <meta name="HandheldFriendly" content="true" />
 
     <title>MathWise</title>
-
     <link rel="stylesheet" href="examples.css">
-    <link href="//db.onlinewebfonts.com/c/ebea2aa546d58c52c20de57835663484?family=Bradley+Hand+ITC+Std" rel="stylesheet" type="text/css"/>
-    <style>
-        nav {
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <link href="//db.onlinewebfonts.com/c/ebea2aa546d58c52c20de57835663484?family=Bradley+Hand+ITC+Std" rel="stylesheet"
+        type="text/css" />
 
-        myscript-math-web {
-            height: calc(100% - 60px);
-        }
 
-        .question {
-            font: 20px "Source Sans Pro", sans-serif;
-            color: #1A9FFF;
-            padding-left: 10px;
-            margin: 2px;
-        }
+    <!-- <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css">
 
-        .check {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            color: white !important;
-        }
+    <link rel="stylesheet" href="custom.css">
 
-        .loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 20px;
-  height: 20px;
-  margin-left: 40%;
-  margin-top: 50px; 
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-}
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-/* Safari */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.write-here {
-    position: absolute;
-    width: 100vw;
-    text-align: initial;
-    padding: 0;
-    margin: 25vh auto 0;
-    margin-left: 20%;
-    transform: translateY(-80%);
-    color:#c8cbd0;
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 25px;
-    min-width: 315px;
-    z-index: 21;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-    -khtml-user-select: none; /* Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                           not supported by any browser */
-    pointer-events: none;
-}
-
-.gesture-here {
-    position: absolute;
-    width: 100vw;
-    text-align: initial;
-    padding: 0;
-    margin: 6vh auto 0;
-    margin-left: 80%;
-    transform: translateY(-80%);
-    color:#c8cbd0;
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 20px;
-    min-width: 315px;
-    z-index: 21;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-    -khtml-user-select: none; /* Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                           not supported by any browser */
-    pointer-events: none;
-}
-
-.recognition-here {
-    position: absolute;
-    width: 100vw;
-    text-align: initial;
-    padding: 0;
-    margin: 6vh auto 0;
-    margin-left: 26%;
-    transform: translateY(-80%);
-    color:#c8cbd0;
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 15px;
-    min-width: 315px;
-    z-index: 21;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-    -khtml-user-select: none; /* Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                           not supported by any browser */
-    pointer-events: none;
-}
-    </style>
-
-<script type="text/javascript" id="MathJax-script" async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
     <!-- As web components are not fully supported -->
-  <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-  <!-- myscript-math-web is imported to be used later -->
-  <script type="module" src="node_modules/myscript-math-web/myscript-math-web.js"></script>
+    <!-- myscript-math-web is imported to be used later -->
+    <script type="module" src="node_modules/myscript-math-web/myscript-math-web.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="fontawesome.js"></script>
+
+    <script src="mathwise.js"></script>
 
     <custom-style>
         <style>
@@ -155,343 +50,192 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </head>
 
 <body>
-<nav style="border: 1px solid #384448;
-height: 50px;
-background: #2b5e70;
-width: 99.5%;
-display: inline-block;
-text-align: center;">
 
-<div style="color: #fff;
-font-size: 28px;
-font-family: Calibri;
-font-variant: petite-caps;">
-    MathWise 
-</div>
-<div style="font-size: 16px;
-color: white;
-font-family: Ink Free;
-line-height: 0.5;">An Interactive Math Assistant</div>
-<!-- <div style="color: #ffff;
-margin-right: 25%;
-font-size: 14px;
-font-family: cursive;
-line-height: 3;">
-    An Interactive Math Assistant
-</div> -->
+    <div id="about"></div>
+    <div id="myHelpContent"></div>
 
-    <!-- <p class="question">What is the formula of mass energy equivalence invented by Albert Einstein ?</p> -->
-</nav>
-<!-- Please change applicationkey and hmackey below with those send by mail during your registration. You can re-access them by connecting to your dashboard at developer.myscript.com with your myscript account -->
-<!-- <div> -->
-    <!-- <div style = " width: 60%;
-    border-right: 1px solid #e52626;"> -->
-<div class="recognition-here">Recognition Window</div>
-<div class="write-here">Write your equation here... </div>
-<myscript-math-web 
-                    
-                    disablesolver
-                    disablecontrols
-                   scheme="https"
-                   host="webdemoapi.myscript.com"
-                   applicationkey="515131ab-35fa-411c-bb4d-3917e00faf60"
-                   hmackey="54b2ca8a-6752-469d-87dd-553bb450e9ad"
-                   mimetypes='["application/x-latex"]'
-                   solverfractionalpartdigit="5"
-                   solverdecimalseparator="."
-                   solverangleunit="rad"
-                   touch-action="none"
-                   processdelay = 0
+    <nav
+        style="border: 1px solid #384448;height: 50px;background: #2b5e70;width: 99.5%;display: inline-block;text-align: center;line-height: 1.4;">
 
-                   style = " width: 70%;
-                   border: 2px solid #006487;
-                   float: left;
-                   margin-top: 2px;
-                   margin-left: 2px;">
-</myscript-math-web>
+        <div>
 
-<div class="gesture-here">Gesture Pad </div>
-<myscript-math-web id="editor2" disableconvertcontrol disablesolver disablecontrols hideexportzone disableundoredocontrol scheme="https"
-    host="webdemoapi.myscript.com" applicationkey="515131ab-35fa-411c-bb4d-3917e00faf60" 
-    hmackey="54b2ca8a-6752-469d-87dd-553bb450e9ad" mimetypes='["application/x-latex"]' touch-action="none" 
-    style="width: 29%;
-    border: 2px solid #006487;
-    float: right;
-    margin-top: 1px;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: 5px;
-    height: 250px;">
-</myscript-math-web>
+            <button class=""
+                style="float: left;position: absolute;top: 5px;left: 20px;border: none;border-radius: 25px;background: #2b5e70;padding: 3px;"
+                onclick="openAbout()">
+                <i class="fas fa-calculator-alt fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="left"
+                    title="" style="color: white;"></i>
+            </button>
 
-<div style = "padding: 5px;
-border: 1px solid #006487;
-width: 28%;
-float: right;
-margin-top: -4px;
-margin-left: 5px;
-margin-right: 5px;
-height: 255px;">
-   
+            <div style="color: #fff;font-size: 28px;font-family: Calibri;font-variant: petite-caps;line-height: 1;">
+                MathWise
+            </div>
 
-    <div id="tab">
-        
-        <div class="resultFormat" style="color: black;
-        text-align: center;
-        outline: none;
-        cursor: pointer;
-        padding: 5px 16px;
-        transition: 0.3s;
-        font-size: 17px;
-        border: 1px solid #78c6b7;
-        background-color: #78c6b7;
-        margin-bottom: 10px;
-        font-variant: petite-caps;">
+            <div style="font-size: 16px;color: white;font-family: Ink Free;line-height: 0;line-height: 1;">An
+                Interactive
+                Math
+                Assistant
+            </div>
+
         </div>
 
-        <div class="toast1" style="margin: 10px;
-        font-size: 18px;
-        font-family: cursive;
-        padding: 10px;
-        word-wrap: break-word;
-        white-space: pre-wrap;
-        word-break: break-word;">
+        <button class="spin"
+            style="float: right;position: absolute;top: 4px;right: 30px;border: none;border-radius: 25px;background: #2b5e70;padding: 3px;">
+            <i class="fas fa-question-circle fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="left"
+                title="Gesture Assistant" onmouseover="openHelp()"></i>
+        </button>
+
+    </nav>
+
+    <div class="recognition-here">Recognition Window</div>
+    <div class="write-here">Write your equation here... </div>
+
+    <myscript-math-web disablesolver disablecontrols alwaysconnected scheme="https" host="webdemoapi.myscript.com"
+        applicationkey="515131ab-35fa-411c-bb4d-3917e00faf60" hmackey="54b2ca8a-6752-469d-87dd-553bb450e9ad"
+        mimetypes='["application/x-latex"]' solverfractionalpartdigit="5" solverdecimalseparator="."
+        solverangleunit="rad" touch-action="none" processdelay=0
+        style="width: 70%;border: 2px solid #006487;float: left;margin-top: 2px;margin-left: 2px;">
+    </myscript-math-web>
+
+    <div class="gesture-here">Gesture Pad </div>
+
+    <myscript-math-web id="editor2" disableconvertcontrol disablesolver disablecontrols hideexportzone
+        disableundoredocontrol alwaysconnected scheme="https" host="webdemoapi.myscript.com"
+        applicationkey="515131ab-35fa-411c-bb4d-3917e00faf60" hmackey="54b2ca8a-6752-469d-87dd-553bb450e9ad"
+        mimetypes='["application/x-latex"]' touch-action="none"
+        style="width: 29%;border: 2px solid #006487;float: right;margin-top: 2px;margin-right: 5px;margin-left: 5px;margin-bottom: 5px;height: 250px;">
+    </myscript-math-web>
+
+    <div
+        style="padding: 5px;border: 1px solid #006487;width: 29%;float: right;margin-top: -4px;margin-left: 5px;margin-right: 5px;height: 300px;">
+        <div id="tab">
+            <div class="resultFormat"
+                style="color: #000000;font-weight: bold;text-align: center;outline: none;cursor: pointer;padding: 5px 16px;transition: 0.3s;font-size: 17px;border: 1px solid #78c6b7;background-color: #78c6b7;margin-bottom: 10px;font-variant: petite-caps;">
             </div>
-        <img id="myImgSrc" src="" style="margin-left: 10px;">
-        <div class="loader" style="display: none;"></div>
-            <!-- https://www4f.wolframalpha.com/Calculate/MSP/MSP409215ag3b6b7i16ihai000035eai20660088660?MSPStoreType=image/gif&s=49 -->
+
+            <div class="toast1" id="latexcontent"></div>
+            <img id="myImgSrc" src="" style="margin-top: 20px; margin-left: 10px; min-width: 150px;">
+            <br>
+
+            <div class="loader" style="display: none;"></div>
+
+            <div class="loaderMessage" style="display: none;position: absolute; top: 400px;margin-left: 8%;">
+                <img src="images/loaderMessage.gif" alt="" />
+                <span style="display: block; font-family: cursive; font-size: 18px;">Recognizing Gesture...</span>
+            </div>
+
+            <!-- Copy Option starts -->
+            <i class="fa fa-clone" id="btnCopy" aria-hidden="true" onclick="copyTextToClipboard()" data-toggle="tooltip"
+                data-placement="top" title="Copy"></i>
+            <input type="text" id="fakeinput" style="opacity: 0; margin-left: 15px;" />
+            <!-- Copy Option ends -->
+
+            <div class="toast" data-delay="1000" data-animation="true"
+                style="width: 160px;background-color: #2b5e70;color: white;font-weight: 500;position: absolute;bottom: 20px;z-index: 999;line-height: 1;">
+                <div class="toast-body">
+                    Copied to ClipBoard!
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+
+    <script>
+
+        var toastDiv = document.getElementById("latexcontent");
+        var copyButton = document.getElementById("btnCopy");
+        var imgElement = document.getElementById("myImgSrc");
+        var component1 = document.querySelector('myscript-math-web');
 
 
-<div class="resultArea" style="width: 60%;"></div>
-<!-- <div>
-    integral \( x^2 dx = x^3/3 + constant\)
-</div> -->
-
-<!-- <button class="check classic-btn" style="position: absolute;
-top: 25px;
-float: right;
-right: 5px;
-background-color: #006487;">Check</button> -->
-
-<script>
-    window.addEventListener('load', () => {
-        const myscriptMathWebElement = document.querySelector('myscript-math-web');
-        const gestureElement = document.getElementById('editor2');
-        document.querySelector('#tab .resultFormat').innerHTML = "Result Window";
-        myscriptMathWebElement.export_();
-
-  
-        //const checkElement = document.querySelector('.check.classic-btn');
-
-        
-        const toast = document.querySelector('#tab .toast1');
-        const myImgSrc = document.querySelector('#tab #myImgSrc');
-        const loader =  document.querySelector('#tab .loader');
-        const resultArea = document.querySelector('.resultArea');
-        const mathMessage = document.querySelector('.write-here');
-        const gestureMessage = document.querySelector('.gesture-here');
-        const recognitionMessage = document.querySelector('.recognition-here'); 
-        
-        
-        // function parseXML(xmlDoc) {
-
-              // console.log(
-            //     "Running callback function next");
-            // parser = new DOMParser();
-            // xmlDoc = parser.parseFromString(response, "text/xml");
-            // parseXML(xmlDoc);
-
-        //     var temp = xmlDoc.getElementsByTagName("queryresult");
-        //     var result = temp[0].childNodes[1].getElementsByTagName("subpod")[0].children[1].innerHTML;
-        //     console.log("Updated result - " + result);
-        //     resultArea.textContent = 'Wolfram result : ' + result;
-
-        // }
-
-        function parseResponse(test1) {
-    
-            var test = test1;
-
-            var textResult, imageResult;
-            var isIntegral = false;
-            if (test.queryresult.pods[0].title == "Indefinite integral") {
-                isIntegral = true;
-            }
-
-            if (isIntegral) {
-                imageResult = test.queryresult.pods[0].subpods[0].img.src;
-                myImgSrc.src = imageResult;
-            }
-
-            else {
-                if (test.queryresult.pods[1].title === "Result") {
-                    textResult = test.queryresult.pods[1].subpods[0].plaintext;
-                    imageResult = test.queryresult.pods[1].subpods[0].img.src;
-                    toast.textContent = textResult ;
-                }
-                else if (test.queryresult.pods[1].title === "Exact result") {
-                    // console.log("Exact Result");
-                    if (test.queryresult.pods[1].scanner === "Simplification") {
-                        textResult = test.queryresult.pods[1].subpods[0].plaintext;
-                        imageResult = test.queryresult.pods[1].subpods[0].img.src;
-                        toast.textContent = textResult ;
-                    }
-                    else if (!test.queryresult.pods[2].title.includes("Decimal")) {
-                        // console.log("Not Decimal approximation");
-                        textResult = test.queryresult.pods[1].subpods[0].plaintext;
-                        imageResult = test.queryresult.pods[1].subpods[0].img.src;
-                        toast.textContent = textResult ;
-                    }
-                    else {
-                        // console.log("Decimal approximation");
-                        textResult = parseFloat(test.queryresult.pods[2].subpods[0].plaintext).toFixed(4);
-                        imageResult = test.queryresult.pods[2].subpods[0].imageResult;
-                        toast.textContent = textResult ;
-                    }
-                }
-                else if (test.queryresult.pods[1].title.includes("Decimal")) {
-                    textResult = parseFloat(test.queryresult.pods[1].subpods[0].plaintext).toFixed(4);
-                    imageResult = test.queryresult.pods[1].subpods[0].img.src;
-                    toast.textContent = textResult;
-                }
-            }
-
-
-            // myImgSrc.src = imageResult;
-            //toast.textContent = textResult ;
-
-            //console.log(result);
-            
-        }
-
-        function callbackFunction(response) {
-          
-            //console.log(response);
-            var response = JSON.parse(response);
-            if(response.queryresult.success === true) {
-                parseResponse(response);
-            }
-            else {
-                toast.textContent = "Oops! Something went wrong. Please try again." ;
-            }
-            // var result = JSON.parse(response).queryresult.pods[0].subpods[0].plaintext;
-            // toast.textContent = 'Solution to the recognized equation : ' + result ;
-            
-        }
-
-        function httpGetAsync(theUrl, callback) {
-            var xmlHttp = new XMLHttpRequest();
-            loader.setAttribute('style', 'display:block');
-            xmlHttp.onreadystatechange = function () {
-                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                    loader.setAttribute('style', 'display:none');
-                    callback(xmlHttp.responseText);
-                }
-            }
-            xmlHttp.open("POST", theUrl, true); // true for asynchronous 
-            // xmlHttp.setRequestHeader('X-PINGOTHER', 'pingpong');
-            // xmlHttp.setRequestHeader('Content-Type', 'application/xml');
-            // xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-            // xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
-
-            xmlHttp.send(null);
-        }
-        var latexExport1 = '';
-
-        myscriptMathWebElement.addEventListener('exported', (evt) => {
-            mathMessage.textContent = '';
-            recognitionMessage.textContent = '';
-            if(evt.detail.exports) {
-            //     myscriptMathWebElement.convert();
-            // const functionOutput1 = myscriptMathWebElement.export_();
-
-                latexExport1 = evt.detail.exports['application/x-latex'] || '';
-                console.log('We got: ', latexExport1);
-                toast.textContent = '';
-                // if ("E=mc^{2}" === latexExport1) {
-                //     myscriptMathWebElement.themecolor = '#008000';
-                // } else {
-                //     myscriptMathWebElement.themecolor = '#FF0000';
-                // }
-            }
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
         });
 
-        gestureElement.addEventListener('exported', (evt) => {
-            gestureMessage.textContent = '';
+        $(function () {
+            $("#about").load("about.html");
+            $("#myHelpContent").load("myhelp.html");
+        });
 
-                    if (evt.detail.exports) {
-                        const latexExport2 = evt.detail.exports['application/x-latex'] || '';
-                    
-
-                    if (latexExport1 && latexExport2 === 'L') {
-                        document.querySelector('#tab .resultFormat').innerHTML = "Latex Format";
-                        myImgSrc.src = '';
-                        toast.textContent = latexExport1;
-                       
+        function copyTextToClipboard() {
+            if (toastDiv.textContent != "") {
+                var fakeInput = document.getElementById('fakeinput');
+                fakeInput.value = toastDiv.textContent;
+                fakeInput.select();
+                try {
+                    var successful = document.execCommand('copy')
+                    if (successful) {
+                        document.querySelector('#tab .toast .toast-body').textContent = "Copied to ClipBoard!";
+                        $('.toast').toast('show');
                     }
-                    else if (latexExport2 === " <") {
-                        myscriptMathWebElement.undo();
-                       
-                    }
-                    else if (latexExport2 === " >") {
-                        myscriptMathWebElement.redo();
-                       
-                    }
-                    else if (latexExport2 === "R") {
-                        myscriptMathWebElement.clear();
-                        toast.textContent = '';
-                        myImgSrc.src = '';
-                    }
-                    else if(latexExport2 === '=' || latexExport2 === 'S' || latexExport2 === 's') {
-                        document.querySelector('#tab .resultFormat').innerHTML = "Solution";
-                        //latexExport1 = '\\dfrac{d}{dx}\\left( x^{2}\\right)';
-                        //var test = latexExport1;
-                        //var test1 = latexExport1.replace(" ", "");
-                        // console.log(test);
-                        // console.log(test1);
-                        //var str1 = "\\dfrac {\\sin 45}{\\cos 30}+\\dfrac {\\tan 30}{\\cos 60}";
-                        var find = 'dfrac ';
-                        var re = new RegExp(find, 'g');
-                        var test1 = latexExport1.replace(re, "dfrac");
-                        console.log(test1);
-
-                        const input = encodeURIComponent(test1);
-                        toast.textContent = '';
-                        httpGetAsync('https://api.wolframalpha.com/v2/query?input=' + input + '&appid=34TPUU-U2YKRG6HY8&output=json', callbackFunction);
-                    }
-                    else {
-                        if (!latexExport1) {
-                            toast.textContent = 'No equation detected';
-                        }
-                        else {
-                        toast.textContent = 'Unrecognized Gesture';
-                        }
-                        myImgSrc.src = '';
-                    }
-                        gestureElement.clear();
-                    }
-                });
-
-
-        function callback1(response) {
-            // console.log(response);
-            parser = new DOMParser();
-            xmlDoc = parser.parseFromString(response,"text/xml");
+                    var msg = successful ? 'successfully' : 'unsuccessfully'
+                    console.log("Copy Content - ", msg);
+                } catch (err) {
+                    console.log("Copy Content Failed", err);
+                }
+            }
+            else if (!imgElement.src.includes("localhost")) {
+                copyImageToClipboard('myImgSrc');
+            }
+            else {
+                document.querySelector('#tab .toast .toast-body').textContent = "Nothing to Copy!";
+                $('.toast').toast('show');
+            }
         }
 
-    
-     
-        // checkElement.addEventListener('click', () => {
-        //     //myscriptMathWebElement.convert();
-        //     //gestureElement.convert();
-        //     const functionOutput = gestureElement.export_();
-        //     const functionOutput1 = myscriptMathWebElement.export_();
-        //     //console.log('Output :' + functionOutput);
-        // });
-    });
-</script>
+        function copyImageToClipboard(Id) {
+            var imgs = document.createElement('img');
+            imgs.src = document.getElementById(Id).src;
+            var bodys = document.body;
+            bodys.appendChild(imgs);
+            if (document.createRange) {
+                var myrange = document.createRange();
+                myrange.setStartBefore(imgs);
+                myrange.setEndAfter(imgs);
+                myrange.selectNode(imgs);
+            }
+            else {
+                alert('CreateRange NOT work');
+            }
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(myrange);
+
+            var successful = document.execCommand('copy');
+            if (successful) {
+                document.querySelector('#tab .toast .toast-body').textContent = "Copied to ClipBoard!";
+                $('.toast').toast('show');
+            }
+            else {
+                document.querySelector('#tab .toast .toast-body').textContent = "Sorry, Copy failed!";
+                $('.toast').toast('show');
+            }
+            var msg = successful ? 'successful' : 'unsuccessful';
+            bodys.removeChild(imgs);
+        }
+
+        function openHelp() {
+            document.getElementById("myHelp").style.height = "90.5%";
+            document.getElementById("myHelp").style.border = "1px solid #006487";
+        }
+
+        function closeHelp() {
+            document.getElementById("myHelp").style.height = "0%";
+            document.getElementById("myHelp").style.border = "none";
+
+        }
+
+        function openAbout() {
+            document.getElementById("myAbout").style.height = "100%";
+            document.getElementById("myAbout").style.border = "1px solid #006487";
+        }
+
+        function closeAbout() {
+            document.getElementById("myAbout").style.height = "0%";
+            document.getElementById("myAbout").style.border = "none";
+        }
+
+    </script>
+
 </body>
 
 </html>
