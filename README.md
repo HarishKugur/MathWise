@@ -17,7 +17,14 @@ MathWise is an Interactive math expression editor with a handwriting recognition
  Application will be hosted on http://localhost:8081/
  
 # Gestures designed for the application
+- To obtain Solution:
 <p float="left">
-  <img src="./images/MathWise_solution.gif.jpg" width="200" />
+  <img src="./images/MathWise_solution.gif" width="400"/>
+  &nbsp;
+</p>
+
+- To obtain Latex Output:
+<p float="left">
+  <img src="./images/MathWise_latex.gif" width="400"/>
   &nbsp;
 </p>
