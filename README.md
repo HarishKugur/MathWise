@@ -2,7 +2,7 @@
 
 # Home Screen of MathWise
 <p align="center">
-<img src="./images/about.jpg" width="600" />
+<img src="./images/screenshots/Home.jpg" width="600" />
   &nbsp;
 </p>
   
