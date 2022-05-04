@@ -8,7 +8,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@polymer/paper-toast": "^3.0.1",
-    "angular": "^1.7.9",
+    "angular": "^1.8.3",
     "angular-loader": "^1.7.5",
     "angular-route": "^1.7.5",
     "html5-boilerplate": "0.0.1",
